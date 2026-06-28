@@ -57,37 +57,82 @@ export default function ProductSliderCTA() {
 
         {/* 🔥 CLEAN INFINITE SLIDER */}
         <div className="mt-12 overflow-hidden">
-          <div className="flex gap-6 w-max animate-product-scroll">
+<div className="flex gap-6 w-max animate-product-scroll">
 
-            {[...products, ...products].map((item, index) => (
-              <div
-                key={index}
-                className="
-                  flex-shrink-0
-                  w-[160px] md:w-[200px]
-                  bg-[#F7FAF5]
-                  border border-green-100
-                  rounded-2xl
-                  shadow-sm
-                  flex flex-col items-center
-                  p-4
-                "
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-xl"
-                />
+{[...products,...products].map((item,index)=>(
 
-                <p className="mt-3 text-sm font-medium text-[var(--text)]">
-                  {item.name}
-                </p>
-              </div>
-            ))}
+<div
+key={index}
+className="
+group
+relative
+flex-shrink-0
+w-[160px]
+md:w-[200px]
+h-[180px]
+md:h-[220px]
+rounded-2xl
+overflow-hidden
+shadow-sm
+border
+border-green-100
+bg-white
+cursor-pointer
+"
+>
 
-          </div>
-        </div>
+<img
+src={item.image}
+alt={item.name}
+className="
+w-full
+h-full
+object-cover
+transition
+duration-500
+group-hover:scale-110
+"
+/>
 
+
+<div
+className="
+absolute
+inset-0
+bg-black/40
+opacity-0
+group-hover:opacity-100
+transition
+duration-300
+flex
+items-end
+justify-center
+pb-5
+"
+>
+
+<p
+className="
+text-white
+text-sm
+md:text-base
+font-semibold
+text-center
+px-2
+"
+>
+{item.name}
+</p>
+
+</div>
+
+
+</div>
+
+))}
+
+</div>
+</div>
         {/* WhatsApp CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
