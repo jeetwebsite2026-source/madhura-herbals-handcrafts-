@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@keyframes product-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-product-scroll {
+  animation: product-scroll 25s linear infinite;
+}
