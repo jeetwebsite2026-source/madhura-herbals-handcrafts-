@@ -23,7 +23,7 @@ const products = [
 export default function ProductSliderCTA() {
 
   return (
-    <section className=" py-10 relative overflow-hidden">
+    <section className=" relative overflow-hidden">
 
       {/* background glow */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-green-200/20 blur-3xl rounded-full" />
