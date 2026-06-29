@@ -28,7 +28,7 @@ export default function Hero() {
 
       <div className="absolute bottom-10 left-10 h-60 w-60 rounded-full bg-[#5AA52D]/10 blur-3xl" />
 
-     <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-4 md:pt-12 min-h-[90vh] flex items-center">
+     <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 md:pt-12 min-h-[90vh] flex items-center">
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
 
