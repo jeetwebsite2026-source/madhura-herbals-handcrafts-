@@ -1,233 +1,221 @@
-// HERBAL PRODUCTS
+
 import hairOil from "../assets/products/herbals/hair-oil.jpeg";
-import nalanguMaavu from "../assets/products/herbals/nalangu-maavu.jpeg";
+import nalangu from "../assets/products/herbals/nalangu-maavu.jpeg";
 import shikakai from "../assets/products/herbals/shikakai.jpeg";
 
-// PODI PRODUCTS
-import sambarPodi from "../assets/products/podis/sambar-podi.png";
-import rasamPodi from "../assets/products/podis/rasam-podi.png";
-import paruppuPodi from "../assets/products/podis/paruppu-podi.png";
-import idliPodi from "../assets/products/podis/idly-podi.png";
-import chickenPodi from "../assets/products/podis/chicken-masala.png";
+import sambar from "../assets/products/podis/sambar-powder.png";
+import rasam from "../assets/products/podis/rasam-powder.png";
+import idly from "../assets/products/podis/idly-powder.png";
+import curry from "../assets/products/podis/curryleaf-powder.png";
+import paruppu from "../assets/products/podis/paruppu-powder.png";
+import chicken from "../assets/products/podis/chicken-powder.png";
 
-// CRAFT PRODUCTS
-import handmadeThreads from "../assets/products/crafts/threads.png";
-import poojaiDecorations from "../assets/products/crafts/poojai.png";
-import artsFromWaste from "../assets/products/crafts/arts-from-waste.png";
-import goluDolls from "../assets/products/crafts/gollu.png";
-import thalaiyatiBommai from "../assets/products/crafts/thalaiyatti.png";
+import thalaiyatti from "../assets/products/crafts/thalaiyatti.png";
+import golu from "../assets/products/crafts/gollu.png";
+import waste from "../assets/products/crafts/arts-from-waste.png";
+import poojai from "../assets/products/crafts/poojai.png";
+import threads from "../assets/products/crafts/threads.png";
+
 
 export const products=[
+
+/* HERBAL */
+
 {
- id:1,
- name:"Natural Hair Oil",
- category:"herbal",
- image:hairOil,
- description:"Traditional herbal oil prepared using carefully selected herbs that help nourish the scalp, strengthen roots, and support healthy hair growth.",
- benefits:[
- "Helps reduce hair fall",
- "Nourishes the scalp",
- "Strengthens hair roots",
- "Supports healthy hair growth"
- ],
- variants:[
- {size:"100ml",price:100},
- {size:"200ml",price:200},
- {size:"500ml",price:480}
- ]
+id:1,
+category:"Herbal",
+name:"Madhura Hair Oil",
+image:hairOil,
+variants:[
+{size:"100ml",price:100},
+{size:"200ml",price:200},
+{size:"500ml",price:480}
+],
+description:"A powerful Ayurvedic hair oil prepared with 25 rare herbs and natural oils to nourish the scalp and support healthy hair growth.",
+ingredients:"Hibiscus, Henna, Aloe Vera, Karisalankanni, Bringaraj, Small Onions, Fenugreek, Rosemary, Olive Oil, Almond Oil, Coconut Oil, Castor Oil",
+benefits:[
+"Reduces Hair Fall",
+"Promotes New Hair Growth",
+"Enhances Natural Shine",
+"Improves Overall Hair Health"
+]
 },
+
 {
- id:2,
- name:"Nalangu Maavu",
- category:"herbal",
- image:nalanguMaavu,
- description:"Traditional herbal bathing powder prepared using natural herbs and roots for daily skin care.",
- benefits:[
- "Reduces body odor",
- "Controls excess oil",
- "Supports healthy glowing skin",
- "Gentle natural cleansing"
- ],
- variants:[
- {size:"100g",price:120},
- {size:"200g",price:240}
- ]
+id:2,
+category:"Herbal",
+name:"Madhura Nalangu Maavu",
+image:nalangu,
+variants:[
+{size:"100g",price:120},
+{size:"200g",price:240}
+],
+description:"A traditional Ayurvedic herbal bath powder made with carefully selected skin nourishing herbs.",
+ingredients:"Vetiver, Adhimadhuram, Green Gram, Orange Peel, Rose Petals, Bengal Gram, Kasthuri Manjal",
+benefits:[
+"Helps Improve Skin Texture",
+"Reduces Skin Irritation",
+"Controls Body Odour",
+"Enhances Natural Glow"
+]
 },
+
 {
- id:3,
- name:"Shikakai Powder",
- category:"herbal",
- image:shikakai,
- description:"Traditional herbal hair cleanser that gently cleanses the scalp while maintaining natural moisture.",
- benefits:[
- "Natural hair cleansing",
- "Maintains scalp health",
- "Leaves hair soft and shiny",
- "Chemical-free care"
- ],
- variants:[
- {size:"100g",price:90},
- {size:"200g",price:180}
- ]
+id:3,
+category:"Herbal",
+name:"Madhura Shikakai Powder",
+image:shikakai,
+variants:[
+{size:"100g",price:90},
+{size:"200g",price:180}
+],
+description:"Premium Shikakai powder prepared by blending 36 natural ingredients and herbs, traditionally processed for healthy hair care.",
+ingredients:"36 Natural Herbal Ingredients, Shikakai, Traditional Hair Cleansing Herbs",
+benefits:[
+"Promotes Hair Growth",
+"Increases Hair Density",
+"Reduces Dandruff and Lice",
+"Improves Hair Texture",
+"Reduces Hair Breakage"
+]
 },
+
+
+
+/* FOOD POWDER */
+
 {
- id:4,
- name:"Sambar Podi",
- category:"podi",
- image:sambarPodi,
- description:"Authentic homemade sambar masala prepared using traditional family recipes.",
- benefits:[
- "100% natural ingredients",
- "No preservatives",
- "Freshly prepared",
- "Traditional taste"
- ],
- variants:[
- {size:"100g",price:250}
- ]
+id:4,
+category:"Powder",
+name:"Madhura Sambar Powder",
+image:sambar,
+variants:[{size:"100g",price:65}],
+description:"Traditional South Indian sambar powder prepared with sun-dried ingredients and authentic homemade methods.",
+ingredients:"Coriander Seeds, Red Chilies, Toor Dal, Chana Dal, Fenugreek Seeds, Cumin Seeds, Black Pepper, Turmeric, Asafoetida",
+benefits:[
+"100% Sun Dried",
+"No Added Colors",
+"No Preservatives"
+]
 },
+
 {
- id:5,
- name:"Rasam Podi",
- category:"podi",
- image:rasamPodi,
- description:"Traditional rasam powder prepared using carefully selected spices.",
- benefits:[
- "Homemade preparation",
- "Rich aroma",
- "No preservatives",
- "Authentic flavor"
- ],
- variants:[
- {size:"100g",price:250}
- ]
+id:5,
+category:"Powder",
+name:"Madhura Rasam Powder",
+image:rasam,
+variants:[{size:"100g",price:65}],
+description:"Authentic rasam powder prepared using traditional spice combinations for rich aroma and taste.",
+ingredients:"Coriander Seeds, Black Pepper, Cumin Seeds, Red Chilies, Toor Dal, Turmeric, Asafoetida",
+benefits:[
+"Traditional Homemade Taste",
+"Sun Dried Ingredients",
+"No Preservatives"
+]
 },
+
 {
- id:6,
- name:"Paruppu Podi",
- category:"podi",
- image:paruppuPodi,
- description:"Traditional paruppu podi prepared using roasted lentils and spices.",
- benefits:[
- "Rich taste",
- "Traditional recipe",
- "Freshly prepared",
- "Natural ingredients"
- ],
- variants:[
- {size:"100g",price:250}
- ]
+id:6,
+category:"Powder",
+name:"Madhura Curry Leaf Powder",
+image:curry,
+variants:[{size:"100g",price:60}],
+description:"Traditional Karuvepillai podi prepared with fresh curry leaves and selected spices.",
+ingredients:"Fresh Curry Leaves, Chana Dal, Urad Dal, Red Chilies, Black Pepper, Cumin Seeds, Salt, Asafoetida",
+benefits:[
+"Rich Natural Aroma",
+"Traditional Preparation",
+"No Added Colors"
+]
 },
+
 {
- id:7,
- name:"Idli Podi",
- category:"podi",
- image:idliPodi,
- description:"Classic idli podi prepared using traditional methods and premium ingredients.",
- benefits:[
- "Authentic flavor",
- "Traditional preparation",
- "No preservatives",
- "Fresh aroma"
- ],
- variants:[
- {size:"100g",price:250}
- ]
+id:7,
+category:"Powder",
+name:"Madhura Paruppu Powder",
+image:paruppu,
+variants:[{size:"100g",price:65}],
+description:"Comforting traditional podi prepared with roasted dals and aromatic spices.",
+ingredients:"Roasted Toor Dal, Roasted Gram, Red Chilies, Black Pepper, Cumin Seeds, Garlic, Salt, Asafoetida",
+benefits:[
+"Protein Rich Blend",
+"Traditional Taste",
+"No Preservatives"
+]
 },
+
 {
- id:8,
- name:"Chicken Podi",
- category:"podi",
- image:chickenPodi,
- description:"Traditional chicken masala blend prepared for rich homemade flavors.",
- benefits:[
- "Fresh spices",
- "Traditional recipe",
- "Rich aroma",
- "Natural ingredients"
- ],
- variants:[
- {size:"100g",price:250}
- ]
+id:8,
+category:"Powder",
+name:"Madhura Chicken Powder",
+image:chicken,
+variants:[{size:"100g",price:80}],
+description:"Authentic South Indian chicken masala blend prepared with aromatic spices.",
+ingredients:"Coriander Seeds, Red Chilies, Cumin Seeds, Black Pepper, Fennel Seeds, Cloves, Cinnamon, Cardamom, Star Anise, Turmeric, Curry Leaves",
+benefits:[
+"Rich Spicy Flavor",
+"Traditional Masala Blend",
+"No Artificial Colors"
+]
 },
+
 {
- id:9,
- name:"Handmade Threads",
- category:"craft",
- image:handmadeThreads,
- description:"Colorful handmade thread creations prepared with care and traditional craftsmanship.",
- benefits:[
- "Handcrafted",
- "Unique designs",
- "Traditional artistry",
- "Premium quality"
- ],
- variants:[
- {size:"Custom",price:250}
- ]
+id:9,
+category:"Powder",
+name:"Madhura Idly Powder",
+image:idly,
+variants:[{size:"100g",price:50}],
+description:"Traditional Idly podi prepared as a perfect spicy companion for hot idly and dosa.",
+ingredients:"Urad Dal, Chana Dal, Sesame Seeds, Red Chilies, Salt, Asafoetida, Curry Leaves",
+benefits:[
+"Perfect With Idly And Dosa",
+"Traditional Taste",
+"No Preservatives"
+]
 },
+
+
+
+/* CRAFTS */
+
 {
- id:10,
- name:"Poojai Decorations",
- category:"craft",
- image:poojaiDecorations,
- description:"Traditional poojai decorations handmade for festivals and celebrations.",
- benefits:[
- "Handmade",
- "Traditional",
- "Decorative",
- "Custom designs"
- ],
- variants:[
- {size:"Custom",price:250}
- ]
+id:10,
+category:"Craft",
+name:"Thalaiyatti Bommai",
+image:thalaiyatti,
+description:"Beautiful traditional handmade Thalaiyatti Bommai crafted for home decoration and cultural gifting."
 },
+
 {
- id:11,
- name:"Arts From Waste",
- category:"craft",
- image:artsFromWaste,
- description:"Creative handcrafted products made from sustainable and recycled materials.",
- benefits:[
- "Eco-friendly",
- "Handmade",
- "Creative designs",
- "Unique products"
- ],
- variants:[
- {size:"Custom",price:250}
- ]
+id:11,
+category:"Craft",
+name:"Kolu Bommai",
+image:golu,
+description:"Traditional handmade dolls perfect for Navaratri Golu decoration and festive collections."
 },
+
 {
- id:12,
- name:"Golu Dolls",
- category:"craft",
- image:goluDolls,
- description:"Traditional golu dolls handcrafted with vibrant colors and cultural artistry.",
- benefits:[
- "Traditional art",
- "Handmade",
- "Colorful designs",
- "Festival special"
- ],
- variants:[
- {size:"Custom",price:250}
- ]
+id:12,
+category:"Craft",
+name:"Art From Waste",
+image:waste,
+description:"Creative handmade decorative products crafted using recycled materials."
 },
+
 {
- id:13,
- name:"Thalaiyati Bommai",
- category:"craft",
- image:thalaiyatiBommai,
- description:"Traditional handmade thalaiyati bommai crafted with attention to detail.",
- benefits:[
- "Traditional",
- "Handmade",
- "Decorative",
- "Unique craftsmanship"
- ],
- variants:[
- {size:"Custom",price:250}
- ]
+id:13,
+category:"Craft",
+name:"Poojai Decoration",
+image:poojai,
+description:"Beautiful handmade pooja decorations designed for traditional occasions."
+},
+
+{
+id:14,
+category:"Craft",
+name:"Handmade Threads",
+image:threads,
+description:"Colorful handmade thread crafts created with traditional artistic detailing."
 }
+
 ];

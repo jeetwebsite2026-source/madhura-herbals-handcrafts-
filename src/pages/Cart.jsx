@@ -1,194 +1,194 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Trash2 } from "lucide-react";
+// import { Link, useNavigate } from "react-router-dom";
+// import { Trash2 } from "lucide-react";
 
-import { useCart } from "../context/CartContext";
+// import { useCart } from "../context/CartContext";
 
 
-export default function Cart() {
+// export default function Cart() {
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
 
-  const {
-    cart,
-    increaseQuantity,
-    decreaseQuantity,
-    removeFromCart,
-    totalPrice,
-  } = useCart();
+//   const {
+//     cart,
+//     increaseQuantity,
+//     decreaseQuantity,
+//     removeFromCart,
+//     totalPrice,
+//   } = useCart();
 
 
 
 
-  // EMPTY CART
+//   // EMPTY CART
 
-  if(cart.length === 0){
+//   if(cart.length === 0){
 
-    return (
+//     return (
 
-      <section
-        className="
-          bg-[#eaeee8]
-          min-h-screen
-          py-10
-        "
-      >
+//       <section
+//         className="
+//           bg-[#eaeee8]
+//           min-h-screen
+//           py-10
+//         "
+//       >
 
-        <div
-          className="
-            max-w-4xl
-            mx-auto
-            px-4
-          "
-        >
+//         <div
+//           className="
+//             max-w-4xl
+//             mx-auto
+//             px-4
+//           "
+//         >
 
-          <div
-            className="
-              text-center
-              py-20
-            "
-          >
+//           <div
+//             className="
+//               text-center
+//               py-20
+//             "
+//           >
 
-            <h1
-              className="
-                text-2xl
-                md:text-4xl
-                font-bold
-                text-[var(--text)]
-              "
-            >
+//             <h1
+//               className="
+//                 text-2xl
+//                 md:text-4xl
+//                 font-bold
+//                 text-[var(--text)]
+//               "
+//             >
 
-              Your Cart is Empty
+//               Your Cart is Empty
 
-            </h1>
+//             </h1>
 
 
-            <p
-              className="
-                mt-3
-                text-sm
-                text-[var(--text-light)]
-              "
-            >
+//             <p
+//               className="
+//                 mt-3
+//                 text-sm
+//                 text-[var(--text-light)]
+//               "
+//             >
 
-              Add some herbal products to continue.
+//               Add some herbal products to continue.
 
-            </p>
+//             </p>
 
 
 
-            <Link
+//             <Link
 
-              to="/products"
+//               to="/products"
 
-              className="
-                inline-block
-                mt-7
-                px-6
-                py-3
-                rounded-full
-                bg-[#5AA52D]
-                hover:bg-[#cb1a0d]
-                text-white
-                font-medium
-                cursor-pointer
-                transition
-              "
+//               className="
+//                 inline-block
+//                 mt-7
+//                 px-6
+//                 py-3
+//                 rounded-full
+//                 bg-[#5AA52D]
+//                 hover:bg-[#cb1a0d]
+//                 text-white
+//                 font-medium
+//                 cursor-pointer
+//                 transition
+//               "
 
-            >
+//             >
 
-              Explore Products
+//               Explore Products
 
-            </Link>
+//             </Link>
 
 
-          </div>
+//           </div>
 
 
-        </div>
+//         </div>
 
 
-      </section>
+//       </section>
 
-    );
+//     );
 
-  }
+//   }
 
 
 
 
 
 
-  return (
+//   return (
 
-    <section
-      className="
-        bg-[#eaeee8]
-        min-h-screen
-        py-8
-      "
-    >
+//     <section
+//       className="
+//         bg-[#eaeee8]
+//         min-h-screen
+//         py-8
+//       "
+//     >
 
 
-      <div
-        className="
-          max-w-5xl
-          mx-auto
-          px-4
-          md:px-6
-        "
-      >
+//       <div
+//         className="
+//           max-w-5xl
+//           mx-auto
+//           px-4
+//           md:px-6
+//         "
+//       >
 
 
 
 
-        {/* HEADER */}
+//         {/* HEADER */}
 
 
-        <div
-          className="
-            text-center
-          "
-        >
+//         <div
+//           className="
+//             text-center
+//           "
+//         >
 
 
-          <div
-            className="
-              inline-flex
-              px-4
-              py-2
-              rounded-full
-              bg-white
-              border
-              border-green-100
-              text-xs
-              text-[var(--primary)]
-              shadow-sm
-            "
-          >
+//           <div
+//             className="
+//               inline-flex
+//               px-4
+//               py-2
+//               rounded-full
+//               bg-white
+//               border
+//               border-green-100
+//               text-xs
+//               text-[var(--primary)]
+//               shadow-sm
+//             "
+//           >
 
-            🛒 Your Cart
+//             🛒 Your Cart
 
-          </div>
+//           </div>
 
 
 
-          <h1
-            className="
-              mt-3
-              text-3xl
-              md:text-5xl
-              font-bold
-              text-[var(--text)]
-            "
-          >
+//           <h1
+//             className="
+//               mt-3
+//               text-3xl
+//               md:text-5xl
+//               font-bold
+//               text-[var(--text)]
+//             "
+//           >
 
-            Review Your Order
+//             Review Your Order
 
-          </h1>
+//           </h1>
 
 
-        </div>
+//         </div>
 
 
 
@@ -197,70 +197,70 @@ export default function Cart() {
 
 
 
-        {/* CART ITEMS */}
+//         {/* CART ITEMS */}
 
 
-        <div
-          className="
-            mt-8
-            space-y-4
-          "
-        >
+//         <div
+//           className="
+//             mt-8
+//             space-y-4
+//           "
+//         >
 
 
 
-          {
-            cart.map((item)=>(
+//           {
+//             cart.map((item)=>(
 
 
-              <div
+//               <div
 
-                key={`${item.id}-${item.pack}`}
+//                 key={`${item.id}-${item.pack}`}
 
-                className="
-                  bg-[#F7FAF5]
-                  rounded-2xl
-                  p-4
-                  border
-                  border-green-100
-                  shadow-sm
-                "
+//                 className="
+//                   bg-[#F7FAF5]
+//                   rounded-2xl
+//                   p-4
+//                   border
+//                   border-green-100
+//                   shadow-sm
+//                 "
 
-              >
+//               >
 
 
-                <div
-                  className="
-                    flex
-                    gap-4
-                    items-center
-                  "
-                >
+//                 <div
+//                   className="
+//                     flex
+//                     gap-4
+//                     items-center
+//                   "
+//                 >
 
 
 
 
-                  {/* IMAGE */}
+//                   {/* IMAGE */}
 
 
-                  <img
+//                   <img
 
-                    src={item.image}
+//                     src={item.image}
 
-                    alt={item.name}
+//                     alt={item.name}
 
-                    className="
-                      w-20
-                      h-20
-                      md:w-28
-                      md:h-28
-                      rounded-xl
-                      bg-white
-                      object-contain
-                      p-1
-                    "
+//                     className="
+//                       w-20
+//                       h-20
+//                       md:w-28
+//                       md:h-28
+//                       rounded-xl
+//                       bg-white
+//                       object-contain
+//                       p-1
+//                     "
 
-                  />
+//                   />
 
 
 
@@ -268,152 +268,152 @@ export default function Cart() {
 
 
 
-                  {/* DETAILS */}
+//                   {/* DETAILS */}
 
 
-                  <div
-                    className="
-                      flex-1
-                    "
-                  >
+//                   <div
+//                     className="
+//                       flex-1
+//                     "
+//                   >
 
 
-                    <h2
-                      className="
-                        text-sm
-                        md:text-lg
-                        font-bold
-                        text-[var(--text)]
-                      "
-                    >
+//                     <h2
+//                       className="
+//                         text-sm
+//                         md:text-lg
+//                         font-bold
+//                         text-[var(--text)]
+//                       "
+//                     >
 
-                      {item.name}
+//                       {item.name}
 
-                    </h2>
+//                     </h2>
 
 
 
-                    <p
-                      className="
-                        text-xs
-                        text-[var(--text-light)]
-                        mt-1
-                      "
-                    >
+//                     <p
+//                       className="
+//                         text-xs
+//                         text-[var(--text-light)]
+//                         mt-1
+//                       "
+//                     >
 
-                      {item.pack}
+//                       {item.pack}
 
-                    </p>
+//                     </p>
 
 
 
-                    <p
-                      className="
-                        mt-2
-                        text-sm
-                        font-semibold
-                        text-[#5AA52D]
-                      "
-                    >
+//                     <p
+//                       className="
+//                         mt-2
+//                         text-sm
+//                         font-semibold
+//                         text-[#5AA52D]
+//                       "
+//                     >
 
-                      ₹{item.price}
+//                       ₹{item.price}
 
-                    </p>
+//                     </p>
 
 
 
 
 
 
-                    {/* QUANTITY */}
+//                     {/* QUANTITY */}
 
 
-                    <div
-                      className="
-                        flex
-                        items-center
-                        gap-3
-                        mt-3
-                      "
-                    >
+//                     <div
+//                       className="
+//                         flex
+//                         items-center
+//                         gap-3
+//                         mt-3
+//                       "
+//                     >
 
 
-                      <button
+//                       <button
 
-                        onClick={()=>decreaseQuantity(
-                          item.id,
-                          item.pack
-                        )}
+//                         onClick={()=>decreaseQuantity(
+//                           item.id,
+//                           item.pack
+//                         )}
 
-                        className="
-                          w-8
-                          h-8
-                          rounded-full
-                          bg-white
-                          border
-                          cursor-pointer
-                          hover:bg-[#5AA52D]
-                          hover:text-white
-                          transition
-                        "
+//                         className="
+//                           w-8
+//                           h-8
+//                           rounded-full
+//                           bg-white
+//                           border
+//                           cursor-pointer
+//                           hover:bg-[#5AA52D]
+//                           hover:text-white
+//                           transition
+//                         "
 
-                      >
+//                       >
 
-                        -
+//                         -
 
-                      </button>
+//                       </button>
 
 
 
 
 
-                      <span
-                        className="
-                          font-semibold
-                          text-sm
-                        "
-                      >
+//                       <span
+//                         className="
+//                           font-semibold
+//                           text-sm
+//                         "
+//                       >
 
-                        {item.quantity}
+//                         {item.quantity}
 
-                      </span>
+//                       </span>
 
 
 
 
 
-                      <button
+//                       <button
 
-                        onClick={()=>increaseQuantity(
-                          item.id,
-                          item.pack
-                        )}
+//                         onClick={()=>increaseQuantity(
+//                           item.id,
+//                           item.pack
+//                         )}
 
-                        className="
-                          w-8
-                          h-8
-                          rounded-full
-                          bg-white
-                          border
-                          cursor-pointer
-                          hover:bg-[#5AA52D]
-                          hover:text-white
-                          transition
-                        "
+//                         className="
+//                           w-8
+//                           h-8
+//                           rounded-full
+//                           bg-white
+//                           border
+//                           cursor-pointer
+//                           hover:bg-[#5AA52D]
+//                           hover:text-white
+//                           transition
+//                         "
 
-                      >
+//                       >
 
-                        +
+//                         +
 
-                      </button>
+//                       </button>
 
 
 
-                    </div>
+//                     </div>
 
 
 
-                  </div>
+//                   </div>
 
 
 
@@ -421,75 +421,75 @@ export default function Cart() {
 
 
 
-                  {/* RIGHT SIDE */}
+//                   {/* RIGHT SIDE */}
 
 
-                  <div
-                    className="
-                      flex
-                      flex-col
-                      justify-between
-                      items-end
-                      h-24
-                    "
-                  >
+//                   <div
+//                     className="
+//                       flex
+//                       flex-col
+//                       justify-between
+//                       items-end
+//                       h-24
+//                     "
+//                   >
 
 
 
-                    <button
+//                     <button
 
-                      onClick={()=>removeFromCart(
-                        item.id,
-                        item.pack
-                      )}
+//                       onClick={()=>removeFromCart(
+//                         item.id,
+//                         item.pack
+//                       )}
 
-                      className="
-                        text-red-600
-                        cursor-pointer
-                        hover:scale-110
-                        transition
-                      "
+//                       className="
+//                         text-red-600
+//                         cursor-pointer
+//                         hover:scale-110
+//                         transition
+//                       "
 
-                    >
+//                     >
 
-                      <Trash2 size={18}/>
+//                       <Trash2 size={18}/>
 
-                    </button>
+//                     </button>
 
 
 
 
 
-                    <p
-                      className="
-                        font-bold
-                        text-[var(--text)]
-                      "
-                    >
+//                     <p
+//                       className="
+//                         font-bold
+//                         text-[var(--text)]
+//                       "
+//                     >
 
-                      ₹{item.price * item.quantity}
+//                       ₹{item.price * item.quantity}
 
-                    </p>
+//                     </p>
 
 
-                  </div>
+//                   </div>
 
 
 
-                </div>
+//                 </div>
 
 
 
-              </div>
+//               </div>
 
 
 
-            ))
-          }
+//             ))
+//           }
 
 
 
-        </div>
+//         </div>
 
 
 
@@ -499,134 +499,134 @@ export default function Cart() {
 
 
 
-        {/* SUMMARY */}
+//         {/* SUMMARY */}
 
 
-        <div
+//         <div
 
-          className="
-            mt-8
-            bg-white
-            rounded-3xl
-            p-5
-            shadow-sm
-          "
+//           className="
+//             mt-8
+//             bg-white
+//             rounded-3xl
+//             p-5
+//             shadow-sm
+//           "
 
-        >
+//         >
 
 
 
-          <div
-            className="
-              flex
-              justify-between
-              font-bold
-              text-lg
-            "
-          >
+//           <div
+//             className="
+//               flex
+//               justify-between
+//               font-bold
+//               text-lg
+//             "
+//           >
 
-            <span>
-              Total
-            </span>
+//             <span>
+//               Total
+//             </span>
 
 
-            <span
-              className="
-                text-[#5AA52D]
-              "
-            >
+//             <span
+//               className="
+//                 text-[#5AA52D]
+//               "
+//             >
 
-              ₹{totalPrice}
+//               ₹{totalPrice}
 
-            </span>
+//             </span>
 
 
-          </div>
+//           </div>
 
 
 
 
 
 
-          <div
-            className="
-              flex
-              gap-3
-              mt-5
-            "
-          >
+//           <div
+//             className="
+//               flex
+//               gap-3
+//               mt-5
+//             "
+//           >
 
 
 
-            <Link
+//             <Link
 
-              to="/products"
+//               to="/products"
 
-              className="
-                flex-1
-                py-3
-                rounded-full
-                border
-                text-center
-                text-sm
-                font-medium
-                cursor-pointer
-                hover:bg-gray-100
-                transition
-              "
+//               className="
+//                 flex-1
+//                 py-3
+//                 rounded-full
+//                 border
+//                 text-center
+//                 text-sm
+//                 font-medium
+//                 cursor-pointer
+//                 hover:bg-gray-100
+//                 transition
+//               "
 
-            >
+//             >
 
-              Continue Shopping
+//               Continue Shopping
 
-            </Link>
+//             </Link>
 
 
 
 
 
-            <button
+//             <button
 
-              onClick={()=>
-                navigate("/checkout")
-              }
+//               onClick={()=>
+//                 navigate("/checkout")
+//               }
 
-              className="
-                flex-1
-                py-3
-                rounded-full
-                bg-[#5AA52D]
-                hover:bg-[#cb1a0d]
-                text-white
-                text-sm
-                font-medium
-                cursor-pointer
-                transition
-              "
+//               className="
+//                 flex-1
+//                 py-3
+//                 rounded-full
+//                 bg-[#5AA52D]
+//                 hover:bg-[#cb1a0d]
+//                 text-white
+//                 text-sm
+//                 font-medium
+//                 cursor-pointer
+//                 transition
+//               "
 
-            >
+//             >
 
-              Proceed Checkout
+//               Proceed Checkout
 
-            </button>
+//             </button>
 
 
 
-          </div>
+//           </div>
 
 
 
-        </div>
+//         </div>
 
 
 
 
-      </div>
+//       </div>
 
 
-    </section>
+//     </section>
 
 
-  );
+//   );
 
-}
+// }

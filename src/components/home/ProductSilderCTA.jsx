@@ -4,8 +4,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import soap from "../../assets/products/herbals/soap.png";
 import hairOil from "../../assets/products/herbals/hair-oil.jpeg";
 import bathingPowder from "../../assets/products/herbals/nalangu-maavu.jpeg";
-import sambar from "../../assets/products/podis/sambar-podi.png";
-import Idli from "../../assets/products/podis/idly-podi.png";
+import sambar from "../../assets/products/podis/sambar-powder.png";
+import Idli from "../../assets/products/podis/idly-powder.png";
 import gollu from "../../assets/products/crafts/gollu.png";
 import arts from  "../../assets/products/crafts/arts-from-waste.png";
 import threads from "../../assets/products/crafts/threads.png";
@@ -23,7 +23,7 @@ const products = [
 export default function ProductSliderCTA() {
 
   return (
-    <section className="bg-[#eaeee8] py-16 relative overflow-hidden">
+    <section className=" py-10 relative overflow-hidden">
 
       {/* background glow */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-green-200/20 blur-3xl rounded-full" />
@@ -87,7 +87,7 @@ alt={item.name}
 className="
 w-full
 h-full
-object-cover
+object-contain
 transition
 duration-500
 group-hover:scale-110

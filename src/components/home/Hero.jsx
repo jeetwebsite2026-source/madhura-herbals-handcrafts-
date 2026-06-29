@@ -9,7 +9,7 @@ import crafts from "../../assets/hero/crafts.png";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#eaeee8]">
+    <section className="relative overflow-hidden">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -43,12 +43,8 @@ export default function Hero() {
   transition={{ duration: 0.5 }}
   className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-green-100 text-[11px] md:text-xs text-[var(--primary)] font-medium shadow-sm"
 >
-  🌿 Handmade with Tradition Since Generations
-  <span className="ml-2 text-red-600 text-xs animate-pulse">●</span>
+  🌿 Since Generations
 
-  <span className="ml-2 text-red-600 font-medium">
-    Loved by 1000+ Homes
-  </span>
 </motion.div>
 
             {/* Heading */}

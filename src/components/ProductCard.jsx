@@ -1,163 +1,154 @@
 import { motion } from "framer-motion";
-
-export default function ProductCard({
-  product,
-  onClick,
-}) {
-  return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 15,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.35,
-      }}
-      whileHover={{
-        y: -4,
-      }}
-      onClick={() => onClick(product)}
-      className="
-        cursor-pointer
-        group
-      "
-    >
-
-      <div
-        className="
-          bg-[#F7FAF5]
-          rounded-2xl
-          overflow-hidden
-          border
-          border-[#5AA52D]/10
-          shadow-sm
-          hover:shadow-md
-          transition-all
-          duration-300
-        "
-      >
+import { FaWhatsapp } from "react-icons/fa";
 
 
-        {/* Product Image */}
+export default function ProductCard({product}){
 
-        <div
-          className="
-            h-36
-            sm:h-44
-            md:h-48
-            overflow-hidden
-            bg-white
-          "
-        >
 
-          <img
+const isCraft=product.category==="Craft";
 
-            src={product.image}
+const price=!isCraft
+?product.variants[0].price
+:null;
 
-            alt={product.name}
 
-            className="
-              w-full
-              h-full
-              object-contain
-              p-2
-              transition-transform
-              duration-500
-              group-hover:scale-105
-            "
+return(
 
-          />
+<motion.div
+initial={{opacity:0,y:15}}
+whileInView={{opacity:1,y:0}}
+viewport={{once:true}}
+transition={{duration:.3}}
+className="
+bg-white
+rounded-2xl
+overflow-hidden
+border border-green-100
+shadow-sm
+hover:shadow-lg
+transition
+"
+>
 
-        </div>
+
+<div className="
+h-32
+sm:h-40
+md:h-48
+bg-[#f7faf5]
+overflow-hidden
+">
+
+<img
+src={product.image}
+alt={product.name}
+className="
+w-full
+h-full
+object-contain
+hover:scale-105
+transition
+duration-300
+"
+/>
+
+</div>
 
 
 
-        {/* Product Content */}
-
-        <div
-          className="
-            px-3
-            py-3
-            md:px-4
-            md:py-4
-          "
-        >
+<div className="
+p-2
+sm:p-3
+text-center
+">
 
 
-          {/* Category */}
-
-          <p
-            className="
-              text-[10px]
-              md:text-xs
-              uppercase
-              tracking-wide
-              text-[var(--primary)]
-              font-medium
-            "
-          >
-            {product.category}
-          </p>
+<h3 className="
+text-xs
+sm:text-sm
+md:text-base
+font-bold
+line-clamp-2
+text-[var(--text)]
+">
+{product.name}
+</h3>
 
 
 
-          {/* Name */}
+{
+isCraft
+?
+<span className="
+mt-2
+inline-block
+px-4
+py-1
+rounded-full
+text-[#5AA52D]
+font-semibold
+text-sm
+">
+Custom
+</span>
 
-          <h3
-            className="
-              mt-1
-              text-sm
-              md:text-base
-              font-bold
-              text-[var(--text)]
-              line-clamp-1
-            "
-          >
-            {product.name}
-          </h3>
+:
+
+<p className="
+mt-2
+text-[#5AA52D]
+font-bold
+text-lg
+">
+₹{price}
+
+<span className="
+text-xs 
+text-gray-500 
+ml-1
+">
+({product.variants[0].size})
+</span>
+
+</p>
+
+}
 
 
 
-          {/* Price */}
+<button
 
-          <p
-            className="
-              mt-1
-              text-xs
-              md:text-sm
-              text-[var(--text-light)]
-            "
-          >
-            ₹{product.variants[0].price}
-          </p>
+className="
+mt-3
+mx-auto
+flex
+items-center
+justify-center
+bg-[#5AA52D]
+text-white
+py-1.5
+sm:py-2
+px-5
+rounded-full
+text-[10px]
+sm:text-xs
+font-medium
+"
+>
+
+<FaWhatsapp className="mr-1"/>
+
+WhatsApp
+
+</button>
 
 
 
-          {/* Accent Line */}
+</div>
 
-          <div
-            className="
-              mt-3
-              h-[2px]
-              w-8
-              bg-[#cb1a0d]
-              transition-all
-              duration-300
-              group-hover:w-14
-            "
-          />
 
-        </div>
+</motion.div>
 
-      </div>
+)
 
-    </motion.div>
-  );
 }

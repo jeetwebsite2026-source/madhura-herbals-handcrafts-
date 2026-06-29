@@ -1,53 +1,53 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import { motion } from "framer-motion";
+// import { useNavigate } from "react-router-dom";
 
-import { useCart } from "../context/CartContext";
+// import { useCart } from "../context/CartContext";
 
 
-export default function Checkout() {
+// export default function Checkout() {
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
 
-  const {
-    cart,
-    totalPrice,
-    clearCart,
-  } = useCart();
+//   const {
+//     cart,
+//     totalPrice,
+//     clearCart,
+//   } = useCart();
 
 
 
-  const [formData,setFormData] = useState({
+//   const [formData,setFormData] = useState({
 
-    name:"",
-    phone:"",
-    alternative:"",
-    address:"",
-    city:"",
-    pincode:"",
+//     name:"",
+//     phone:"",
+//     alternative:"",
+//     address:"",
+//     city:"",
+//     pincode:"",
 
-  });
+//   });
 
 
 
-  const [errors,setErrors] = useState({});
+//   const [errors,setErrors] = useState({});
 
 
 
 
 
-  const handleChange=(e)=>{
+//   const handleChange=(e)=>{
 
-    setFormData({
+//     setFormData({
 
-      ...formData,
+//       ...formData,
 
-      [e.target.name]:e.target.value
+//       [e.target.name]:e.target.value
 
-    });
+//     });
 
-  };
+//   };
 
 
 
@@ -55,60 +55,60 @@ export default function Checkout() {
 
 
 
-  const validate=()=>{
+//   const validate=()=>{
 
 
-    let newErrors={};
+//     let newErrors={};
 
 
 
-    if(!formData.name.trim()){
+//     if(!formData.name.trim()){
 
-      newErrors.name="Name is required";
+//       newErrors.name="Name is required";
 
-    }
+//     }
 
 
-    if(
-      !/^[6-9]\d{9}$/.test(formData.phone)
-    ){
+//     if(
+//       !/^[6-9]\d{9}$/.test(formData.phone)
+//     ){
 
-      newErrors.phone="Enter valid mobile number";
+//       newErrors.phone="Enter valid mobile number";
 
-    }
+//     }
 
 
-    if(formData.address.length < 10){
+//     if(formData.address.length < 10){
 
-      newErrors.address="Enter complete address";
+//       newErrors.address="Enter complete address";
 
-    }
+//     }
 
 
-    if(!formData.city.trim()){
+//     if(!formData.city.trim()){
 
-      newErrors.city="City is required";
+//       newErrors.city="City is required";
 
-    }
+//     }
 
 
-    if(
-      !/^[1-9][0-9]{5}$/.test(formData.pincode)
-    ){
+//     if(
+//       !/^[1-9][0-9]{5}$/.test(formData.pincode)
+//     ){
 
-      newErrors.pincode="Enter valid pincode";
+//       newErrors.pincode="Enter valid pincode";
 
-    }
+//     }
 
 
 
-    setErrors(newErrors);
+//     setErrors(newErrors);
 
 
-    return Object.keys(newErrors).length===0;
+//     return Object.keys(newErrors).length===0;
 
 
-  };
+//   };
 
 
 
@@ -117,47 +117,47 @@ export default function Checkout() {
 
 
 
-  const handleSubmit=(e)=>{
+//   const handleSubmit=(e)=>{
 
-    e.preventDefault();
+//     e.preventDefault();
 
 
-    if(!validate()) return;
+//     if(!validate()) return;
 
 
 
-    const orderData={
+//     const orderData={
 
-      customer:formData,
+//       customer:formData,
 
-      items:cart,
+//       items:cart,
 
-      paymentMethod:"COD",
+//       paymentMethod:"COD",
 
-      totalAmount:totalPrice
+//       totalAmount:totalPrice
 
-    };
+//     };
 
 
-    console.log(orderData);
+//     console.log(orderData);
 
 
-    /*
-      Later send this data to Node.js API
+//     /*
+//       Later send this data to Node.js API
 
-      axios.post("/api/orders",orderData)
+//       axios.post("/api/orders",orderData)
 
-    */
+//     */
 
 
 
-    clearCart();
+//     clearCart();
 
 
-    navigate("/order-success");
+//     navigate("/order-success");
 
 
-  };
+//   };
 
 
 
@@ -166,102 +166,102 @@ export default function Checkout() {
 
 
 
-  return (
+//   return (
 
-    <section
+//     <section
 
-      className="
-        bg-[#eaeee8]
-        min-h-screen
-        py-8
-      "
+//       className="
+//         bg-[#eaeee8]
+//         min-h-screen
+//         py-8
+//       "
 
-    >
+//     >
 
 
 
-      <div
+//       <div
 
-        className="
-          max-w-6xl
-          mx-auto
-          px-4
-          md:px-6
-        "
+//         className="
+//           max-w-6xl
+//           mx-auto
+//           px-4
+//           md:px-6
+//         "
 
-      >
+//       >
 
 
 
 
 
-        {/* HEADER */}
+//         {/* HEADER */}
 
 
-        <motion.div
+//         <motion.div
 
-          initial={{
-            opacity:0,
-            y:20
-          }}
+//           initial={{
+//             opacity:0,
+//             y:20
+//           }}
 
-          animate={{
-            opacity:1,
-            y:0
-          }}
+//           animate={{
+//             opacity:1,
+//             y:0
+//           }}
 
-          transition={{
-            duration:.4
-          }}
+//           transition={{
+//             duration:.4
+//           }}
 
-          className="
-            text-center
-            mb-8
-          "
+//           className="
+//             text-center
+//             mb-8
+//           "
 
-        >
+//         >
 
 
-          <div
+//           <div
 
-            className="
-              inline-flex
-              px-4
-              py-2
-              rounded-full
-              bg-white
-              border
-              border-green-100
-              text-xs
-              text-[var(--primary)]
-            "
+//             className="
+//               inline-flex
+//               px-4
+//               py-2
+//               rounded-full
+//               bg-white
+//               border
+//               border-green-100
+//               text-xs
+//               text-[var(--primary)]
+//             "
 
-          >
+//           >
 
-            🛒 Checkout
+//             🛒 Checkout
 
-          </div>
+//           </div>
 
 
 
-          <h1
+//           <h1
 
-            className="
-              mt-3
-              text-3xl
-              md:text-5xl
-              font-bold
-              text-[var(--text)]
-            "
+//             className="
+//               mt-3
+//               text-3xl
+//               md:text-5xl
+//               font-bold
+//               text-[var(--text)]
+//             "
 
-          >
+//           >
 
-            Complete Your Order
+//             Complete Your Order
 
-          </h1>
+//           </h1>
 
 
-        </motion.div>
+//         </motion.div>
 
 
 
@@ -272,15 +272,15 @@ export default function Checkout() {
 
 
 
-        <div
+//         <div
 
-          className="
-            grid
-            md:grid-cols-2
-            gap-6
-          "
+//           className="
+//             grid
+//             md:grid-cols-2
+//             gap-6
+//           "
 
-        >
+//         >
 
 
 
@@ -288,114 +288,114 @@ export default function Checkout() {
 
 
 
-          {/* FORM */}
+//           {/* FORM */}
 
 
-          <motion.div
+//           <motion.div
 
-            initial={{
-              opacity:0,
-              x:-20
-            }}
+//             initial={{
+//               opacity:0,
+//               x:-20
+//             }}
 
-            animate={{
-              opacity:1,
-              x:0
-            }}
+//             animate={{
+//               opacity:1,
+//               x:0
+//             }}
 
-            className="
-              bg-[#F7FAF5]
-              rounded-3xl
-              p-5
-              md:p-7
-              shadow-sm
-            "
+//             className="
+//               bg-[#F7FAF5]
+//               rounded-3xl
+//               p-5
+//               md:p-7
+//               shadow-sm
+//             "
 
-          >
+//           >
 
 
-            <h2
+//             <h2
 
-              className="
-                text-xl
-                font-bold
-                text-[var(--text)]
-                mb-5
-              "
+//               className="
+//                 text-xl
+//                 font-bold
+//                 text-[var(--text)]
+//                 mb-5
+//               "
 
-            >
+//             >
 
-              Customer Details
+//               Customer Details
 
-            </h2>
+//             </h2>
 
 
 
 
 
-            <form
+//             <form
 
-              onSubmit={handleSubmit}
+//               onSubmit={handleSubmit}
 
-              className="
-                space-y-4
-              "
+//               className="
+//                 space-y-4
+//               "
 
-            >
+//             >
 
 
 
 
 
 
-              <Input
+//               <Input
 
-                label="Full Name"
+//                 label="Full Name"
 
-                name="name"
+//                 name="name"
 
-                value={formData.name}
+//                 value={formData.name}
 
-                onChange={handleChange}
+//                 onChange={handleChange}
 
-                error={errors.name}
+//                 error={errors.name}
 
-              />
+//               />
 
 
 
 
 
-              <Input
+//               <Input
 
-                label="Phone Number"
+//                 label="Phone Number"
 
-                name="phone"
+//                 name="phone"
 
-                value={formData.phone}
+//                 value={formData.phone}
 
-                onChange={handleChange}
+//                 onChange={handleChange}
 
-                error={errors.phone}
+//                 error={errors.phone}
 
-              />
+//               />
 
 
 
 
 
 
-              <Input
+//               <Input
 
-                label="Alternative Number (Optional)"
+//                 label="Alternative Number (Optional)"
 
-                name="alternative"
+//                 name="alternative"
 
-                value={formData.alternative}
+//                 value={formData.alternative}
 
-                onChange={handleChange}
+//                 onChange={handleChange}
 
-              />
+//               />
 
 
 
@@ -403,51 +403,51 @@ export default function Checkout() {
 
 
 
-              <div>
+//               <div>
 
-                <label className="text-sm font-medium">
+//                 <label className="text-sm font-medium">
 
-                  Address
+//                   Address
 
-                </label>
+//                 </label>
 
 
-                <textarea
+//                 <textarea
 
-                  name="address"
+//                   name="address"
 
-                  value={formData.address}
+//                   value={formData.address}
 
-                  onChange={handleChange}
+//                   onChange={handleChange}
 
-                  placeholder="House no, street, area"
+//                   placeholder="House no, street, area"
 
-                  rows="3"
+//                   rows="3"
 
-                  className="
-                    mt-1
-                    w-full
-                    rounded-xl
-                    border
-                    p-3
-                    outline-none
-                    focus:border-[#5AA52D]
-                  "
+//                   className="
+//                     mt-1
+//                     w-full
+//                     rounded-xl
+//                     border
+//                     p-3
+//                     outline-none
+//                     focus:border-[#5AA52D]
+//                   "
 
-                />
+//                 />
 
 
-                {
-                  errors.address &&
-                  <p className="text-red-500 text-xs mt-1">
+//                 {
+//                   errors.address &&
+//                   <p className="text-red-500 text-xs mt-1">
 
-                    {errors.address}
+//                     {errors.address}
 
-                  </p>
-                }
+//                   </p>
+//                 }
 
 
-              </div>
+//               </div>
 
 
 
@@ -456,50 +456,50 @@ export default function Checkout() {
 
 
 
-              <div
+//               <div
 
-                className="
-                  grid
-                  grid-cols-2
-                  gap-3
-                "
+//                 className="
+//                   grid
+//                   grid-cols-2
+//                   gap-3
+//                 "
 
-              >
+//               >
 
 
-                <Input
+//                 <Input
 
-                  label="City"
+//                   label="City"
 
-                  name="city"
+//                   name="city"
 
-                  value={formData.city}
+//                   value={formData.city}
 
-                  onChange={handleChange}
+//                   onChange={handleChange}
 
-                  error={errors.city}
+//                   error={errors.city}
 
-                />
+//                 />
 
 
 
-                <Input
+//                 <Input
 
-                  label="Pincode"
+//                   label="Pincode"
 
-                  name="pincode"
+//                   name="pincode"
 
-                  value={formData.pincode}
+//                   value={formData.pincode}
 
-                  onChange={handleChange}
+//                   onChange={handleChange}
 
-                  error={errors.pincode}
+//                   error={errors.pincode}
 
-                />
+//                 />
 
 
 
-              </div>
+//               </div>
 
 
 
@@ -508,33 +508,33 @@ export default function Checkout() {
 
 
 
-              <button
+//               <button
 
-                className="
-                  w-full
-                  mt-3
-                  py-3
-                  rounded-full
-                  bg-[#5AA52D]
-                  hover:bg-[#cb1a0d]
-                  text-white
-                  font-medium
-                  cursor-pointer
-                  transition
-                "
+//                 className="
+//                   w-full
+//                   mt-3
+//                   py-3
+//                   rounded-full
+//                   bg-[#5AA52D]
+//                   hover:bg-[#cb1a0d]
+//                   text-white
+//                   font-medium
+//                   cursor-pointer
+//                   transition
+//                 "
 
-              >
+//               >
 
-                Place Order - COD
+//                 Place Order - COD
 
-              </button>
+//               </button>
 
 
 
-            </form>
+//             </form>
 
 
-          </motion.div>
+//           </motion.div>
 
 
 
@@ -547,182 +547,182 @@ export default function Checkout() {
 
 
 
-          {/* ORDER SUMMARY */}
+//           {/* ORDER SUMMARY */}
 
 
-          <motion.div
+//           <motion.div
 
-            initial={{
-              opacity:0,
-              x:20
-            }}
+//             initial={{
+//               opacity:0,
+//               x:20
+//             }}
 
-            animate={{
-              opacity:1,
-              x:0
-            }}
+//             animate={{
+//               opacity:1,
+//               x:0
+//             }}
 
-            className="
-              bg-white
-              rounded-3xl
-              p-5
-              md:p-7
-              h-fit
-            "
+//             className="
+//               bg-white
+//               rounded-3xl
+//               p-5
+//               md:p-7
+//               h-fit
+//             "
 
-          >
+//           >
 
 
-            <h2
+//             <h2
 
-              className="
-                text-xl
-                font-bold
-              "
+//               className="
+//                 text-xl
+//                 font-bold
+//               "
 
-            >
+//             >
 
-              Order Summary
+//               Order Summary
 
-            </h2>
+//             </h2>
 
 
 
 
 
-            <div
+//             <div
 
-              className="
-                mt-5
-                space-y-4
-              "
+//               className="
+//                 mt-5
+//                 space-y-4
+//               "
 
-            >
+//             >
 
 
-            {
-              cart.map(item=>(
+//             {
+//               cart.map(item=>(
 
-                <div
+//                 <div
 
-                  key={`${item.id}-${item.pack}`}
+//                   key={`${item.id}-${item.pack}`}
 
-                  className="
-                    flex
-                    justify-between
-                    text-sm
-                  "
+//                   className="
+//                     flex
+//                     justify-between
+//                     text-sm
+//                   "
 
-                >
+//                 >
 
-                  <div>
+//                   <div>
 
-                    <p className="font-medium">
+//                     <p className="font-medium">
 
-                      {item.name}
+//                       {item.name}
 
-                    </p>
+//                     </p>
 
-                    <p className="text-gray-500">
+//                     <p className="text-gray-500">
 
-                      Qty: {item.quantity}
+//                       Qty: {item.quantity}
 
-                    </p>
+//                     </p>
 
-                  </div>
+//                   </div>
 
 
-                  <p className="font-semibold">
+//                   <p className="font-semibold">
 
-                    ₹{item.price * item.quantity}
+//                     ₹{item.price * item.quantity}
 
-                  </p>
+//                   </p>
 
 
-                </div>
+//                 </div>
 
-              ))
-            }
+//               ))
+//             }
 
 
-            </div>
+//             </div>
 
 
 
 
 
-            <div
+//             <div
 
-              className="
-                border-t
-                mt-5
-                pt-5
-                flex
-                justify-between
-                font-bold
-              "
+//               className="
+//                 border-t
+//                 mt-5
+//                 pt-5
+//                 flex
+//                 justify-between
+//                 font-bold
+//               "
 
-            >
+//             >
 
-              <span>
+//               <span>
 
-                Total
+//                 Total
 
-              </span>
+//               </span>
 
 
-              <span className="text-[#5AA52D]">
+//               <span className="text-[#5AA52D]">
 
-                ₹{totalPrice}
+//                 ₹{totalPrice}
 
-              </span>
+//               </span>
 
 
-            </div>
+//             </div>
 
 
 
 
-            <div
+//             <div
 
-              className="
-                mt-5
-                bg-[#F7FAF5]
-                rounded-xl
-                p-4
-                text-sm
-              "
+//               className="
+//                 mt-5
+//                 bg-[#F7FAF5]
+//                 rounded-xl
+//                 p-4
+//                 text-sm
+//               "
 
-            >
+//             >
 
-              💵 Cash on Delivery
+//               💵 Cash on Delivery
 
-              <p className="text-gray-500 mt-1">
+//               <p className="text-gray-500 mt-1">
 
-                Pay after receiving your order.
+//                 Pay after receiving your order.
 
-              </p>
+//               </p>
 
 
-            </div>
+//             </div>
 
 
 
-          </motion.div>
+//           </motion.div>
 
 
 
-        </div>
+//         </div>
 
 
-      </div>
+//       </div>
 
 
-    </section>
+//     </section>
 
-  );
+//   );
 
-}
+// }
 
 
 
@@ -732,63 +732,63 @@ export default function Checkout() {
 
 
 
-function Input({
+// function Input({
 
-  label,
-  name,
-  value,
-  onChange,
-  error
+//   label,
+//   name,
+//   value,
+//   onChange,
+//   error
 
-}){
+// }){
 
 
-return (
+// return (
 
-<div>
+// <div>
 
 
-<label className="text-sm font-medium">
+// <label className="text-sm font-medium">
 
-{label}
+// {label}
 
-</label>
+// </label>
 
 
-<input
+// <input
 
-name={name}
+// name={name}
 
-value={value}
+// value={value}
 
-onChange={onChange}
+// onChange={onChange}
 
-className="
-mt-1
-w-full
-rounded-xl
-border
-p-3
-outline-none
-focus:border-[#5AA52D]
-"
+// className="
+// mt-1
+// w-full
+// rounded-xl
+// border
+// p-3
+// outline-none
+// focus:border-[#5AA52D]
+// "
 
 
-/>
+// />
 
 
-{
-error &&
-<p className="text-red-500 text-xs mt-1">
+// {
+// error &&
+// <p className="text-red-500 text-xs mt-1">
 
-{error}
+// {error}
 
-</p>
-}
+// </p>
+// }
 
 
-</div>
+// </div>
 
-)
+// )
 
-}
+// }

@@ -35,7 +35,7 @@ const features = [
 
 export default function WhyMadhura() {
   return (
-    <section className="relative py-10 bg-[#eaeee8] overflow-hidden">
+    <section className="relative py-10  overflow-hidden">
 
 
 

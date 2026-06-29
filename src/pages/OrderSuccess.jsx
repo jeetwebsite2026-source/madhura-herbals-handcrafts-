@@ -1,83 +1,83 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
+// import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+// import { CheckCircle } from "lucide-react";
 
 
-export default function OrderSuccess() {
+// export default function OrderSuccess() {
 
 
-  return (
+//   return (
 
-    <section
+//     <section
 
-      className="
-        bg-[#eaeee8]
-        min-h-screen
-        flex
-        items-center
-        justify-center
-        px-4
-        py-10
-      "
+//       className="
+//         bg-[#eaeee8]
+//         min-h-screen
+//         flex
+//         items-center
+//         justify-center
+//         px-4
+//         py-10
+//       "
 
-    >
+//     >
 
 
-      <motion.div
+//       <motion.div
 
-        initial={{
-          opacity:0,
-          y:30
-        }}
+//         initial={{
+//           opacity:0,
+//           y:30
+//         }}
 
-        animate={{
-          opacity:1,
-          y:0
-        }}
+//         animate={{
+//           opacity:1,
+//           y:0
+//         }}
 
-        transition={{
-          duration:0.5
-        }}
+//         transition={{
+//           duration:0.5
+//         }}
 
 
-        className="
-          max-w-md
-          w-full
-          bg-[#F7FAF5]
-          rounded-3xl
-          p-8
-          text-center
-          shadow-sm
-        "
+//         className="
+//           max-w-md
+//           w-full
+//           bg-[#F7FAF5]
+//           rounded-3xl
+//           p-8
+//           text-center
+//           shadow-sm
+//         "
 
-      >
+//       >
 
 
 
 
-        {/* ICON */}
+//         {/* ICON */}
 
 
-        <div
+//         <div
 
-          className="
-            flex
-            justify-center
-          "
+//           className="
+//             flex
+//             justify-center
+//           "
 
-        >
+//         >
 
-          <CheckCircle
+//           <CheckCircle
 
-            size={70}
+//             size={70}
 
-            className="
-              text-[#5AA52D]
-            "
+//             className="
+//               text-[#5AA52D]
+//             "
 
-          />
+//           />
 
-        </div>
+//         </div>
 
 
 
@@ -85,42 +85,42 @@ export default function OrderSuccess() {
 
 
 
-        <h1
+//         <h1
 
-          className="
-            mt-5
-            text-3xl
-            font-bold
-            text-[var(--text)]
-          "
+//           className="
+//             mt-5
+//             text-3xl
+//             font-bold
+//             text-[var(--text)]
+//           "
 
-        >
+//         >
 
-          Order Placed!
+//           Order Placed!
 
-        </h1>
+//         </h1>
 
 
 
 
 
 
-        <p
+//         <p
 
-          className="
-            mt-3
-            text-sm
-            text-[var(--text-light)]
-            leading-relaxed
-          "
+//           className="
+//             mt-3
+//             text-sm
+//             text-[var(--text-light)]
+//             leading-relaxed
+//           "
 
-        >
+//         >
 
-          Thank you for ordering from Madhura.
-          We will contact you soon and deliver
-          your products with care.
+//           Thank you for ordering from Madhura.
+//           We will contact you soon and deliver
+//           your products with care.
 
-        </p>
+//         </p>
 
 
 
@@ -128,53 +128,53 @@ export default function OrderSuccess() {
 
 
 
-        {/* ORDER ID PLACEHOLDER */}
+//         {/* ORDER ID PLACEHOLDER */}
 
 
-        <div
+//         <div
 
-          className="
-            mt-6
-            bg-white
-            rounded-2xl
-            p-4
-            border
-            border-green-100
-          "
+//           className="
+//             mt-6
+//             bg-white
+//             rounded-2xl
+//             p-4
+//             border
+//             border-green-100
+//           "
 
-        >
+//         >
 
-          <p
+//           <p
 
-            className="
-              text-xs
-              text-gray-500
-            "
+//             className="
+//               text-xs
+//               text-gray-500
+//             "
 
-          >
+//           >
 
-            Order ID
+//             Order ID
 
-          </p>
+//           </p>
 
 
 
-          <p
+//           <p
 
-            className="
-              mt-1
-              font-bold
-              text-[#5AA52D]
-            "
+//             className="
+//               mt-1
+//               font-bold
+//               text-[#5AA52D]
+//             "
 
-          >
+//           >
 
-            #MD1001
+//             #MD1001
 
-          </p>
+//           </p>
 
 
-        </div>
+//         </div>
 
 
 
@@ -182,39 +182,39 @@ export default function OrderSuccess() {
 
 
 
-        <Link
+//         <Link
 
-          to="/products"
+//           to="/products"
 
-          className="
-            inline-block
-            mt-7
-            w-full
-            py-3
-            rounded-full
-            bg-[#5AA52D]
-            hover:bg-[#cb1a0d]
-            text-white
-            font-medium
-            cursor-pointer
-            transition
-          "
+//           className="
+//             inline-block
+//             mt-7
+//             w-full
+//             py-3
+//             rounded-full
+//             bg-[#5AA52D]
+//             hover:bg-[#cb1a0d]
+//             text-white
+//             font-medium
+//             cursor-pointer
+//             transition
+//           "
 
-        >
+//         >
 
-          Continue Shopping
+//           Continue Shopping
 
-        </Link>
+//         </Link>
 
 
 
 
-      </motion.div>
+//       </motion.div>
 
 
 
-    </section>
+//     </section>
 
-  );
+//   );
 
-}
+// }

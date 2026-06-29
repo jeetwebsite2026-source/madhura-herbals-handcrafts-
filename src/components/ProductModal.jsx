@@ -1,149 +1,275 @@
-import { motion,AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
-import { useState } from "react";
+import {motion,AnimatePresence} from "framer-motion";
+import {X} from "lucide-react";
+import {useState} from "react";
 
 export default function ProductModal({product,onClose}){
 
-const [selectedVariant,setSelectedVariant]=useState(product.variants[0]);
-const [quantity,setQuantity]=useState(1);
+const isCraft=product.category==="Craft";
 
-const whatsappLink=`https://wa.me/918220434055?text=${encodeURIComponent(
+const [variant,setVariant]=useState(
+!isCraft?product.variants[0]:null
+);
+
+const [qty,setQty]=useState(1);
+
+
+const whatsapp=`https://wa.me/918220434055?text=${encodeURIComponent(
 `Hi Madhura,
-
 I am interested in ${product.name}.
-
-Pack: ${selectedVariant.size}
-Price: ₹${selectedVariant.price}
-Quantity: ${quantity}
-
-Please share the order details.`
+${variant?`Pack: ${variant.size}
+Price: ₹${variant.price}`:""}
+Quantity: ${qty}
+Please share order details.`
 )}`;
+
 
 return(
 <AnimatePresence>
+
 <motion.div
 initial={{opacity:0}}
 animate={{opacity:1}}
 exit={{opacity:0}}
-className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-3"
+className="
+fixed
+inset-0
+z-50
+bg-black/50
+backdrop-blur-sm
+flex
+items-center
+justify-center
+p-4
+"
 >
 
 <motion.div
-initial={{opacity:0,y:20}}
-animate={{opacity:1,y:0}}
-exit={{opacity:0,y:20}}
-transition={{duration:.25}}
-className="relative w-full max-w-6xl max-h-[90vh] bg-[#F7FAF5] rounded-3xl overflow-y-auto shadow-xl"
+initial={{scale:.95}}
+animate={{scale:1}}
+className="
+relative
+bg-[#f7faf5]
+rounded-3xl
+max-w-4xl
+w-full
+max-h-[85vh]
+overflow-y-auto
+shadow-xl
+"
 >
+
 
 <button
 onClick={onClose}
-className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
+className="
+absolute
+right-4
+top-4
+z-10
+bg-white
+rounded-full
+w-9
+h-9
+flex
+items-center
+justify-center
+"
 >
 <X size={18}/>
 </button>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-3 sm:p-4 md:p-8">
 
-<div className="bg-white rounded-2xl h-[260px] sm:h-[320px] md:h-[520px] flex items-center justify-center overflow-hidden">
-<img src={product.image} alt={product.name} className="w-full h-full object-contain p-3"/>
+<div className="
+grid
+md:grid-cols-2
+gap-5
+p-4
+md:p-5
+"
+>
+
+
+<div className="
+bg-white
+rounded-2xl
+h-44
+md:h-[430px]
+overflow-hidden
+"
+>
+
+<img
+src={product.image}
+className="
+w-full
+h-full
+object-contain
+"
+/>
+
 </div>
 
-<div className="flex flex-col justify-start md:justify-center">
 
-<h2 className="text-lg md:text-4xl font-bold text-[var(--text)]">
+
+<div className="
+flex
+flex-col
+
+"
+>
+<h2 className="
+text-xl
+md:text-3xl
+font-bold
+text-[var(--text)]
+">
 {product.name}
 </h2>
 
-<p className="mt-2 text-base md:text-2xl font-semibold text-[#5AA52D]">
-₹{selectedVariant.price}
+{
+isCraft && product.description && (
+<p className="
+mt-4
+text-sm
+md:text-base
+text-gray-600
+leading-relaxed
+">
+{product.description}
+</p>
+)
+}
+{!isCraft&&(
+<>
+<p className="
+mt-3
+text-xl
+font-bold
+text-[#5AA52D]
+">
+₹{variant.price}
 </p>
 
-<p className="mt-1 text-xs md:text-sm text-[var(--text-light)]">
-Pack: {selectedVariant.size}
-</p>
 
-<div className="mt-3">
-<h3 className="text-sm md:text-base font-bold text-[var(--text)]">
+<div className="mt-4">
+
+<h3 className="font-bold">
 Select Pack
 </h3>
 
-<div className="flex flex-wrap gap-2 mt-2">
+<div className="flex gap-2 mt-2 flex-wrap">
+
 {
-product.variants.map((item)=>(
+product.variants.map(v=>(
 <button
-key={item.size}
-onClick={()=>setSelectedVariant(item)}
-className={`px-3 py-1.5 rounded-full text-xs md:text-sm border cursor-pointer transition ${
-selectedVariant.size===item.size
-?"bg-[#5AA52D] text-white border-[#5AA52D]"
-:"bg-white hover:bg-[#5AA52D] hover:text-white"
-}`}
+key={v.size}
+onClick={()=>setVariant(v)}
+className={`
+px-4 py-2 rounded-full border text-sm
+${
+variant.size===v.size
+?"bg-[#5AA52D] text-white"
+:"bg-white"
+}
+`}
 >
-{item.size}
+{v.size}
 </button>
 ))
 }
+
 </div>
+
 </div>
+</>
+)}
 
-<p className="mt-3 text-xs md:text-sm leading-relaxed text-[var(--text-light)] line-clamp-3">
-{product.description}
-</p>
 
-<div className="mt-2 md:mt-3">
 
-<h3 className="font-bold text-sm md:text-base text-[var(--text)]">
-Benefits
-</h3>
-
-<div className="mt-1 text-xs md:text-sm text-[var(--text-light)]">
 {
-product.benefits.slice(0,3).map((item)=>(
-<p key={item}>✓ {item}</p>
-))
+product.ingredients&&(
+<p className="mt-3 text-sm">
+<b>Ingredients:</b> {product.ingredients}
+</p>
+)
+}
+
+
+{
+product.benefits&&(
+<div className="mt-3 text-sm">
+<b>Benefits</b>
+{
+product.benefits.map(item=>
+<p key={item}>• {item}</p>
+)
 }
 </div>
+)
+}
 
-</div>
 
-<div className="mt-4 flex items-center gap-3">
+
+{!isCraft&&(
+<div className="
+mt-5
+flex
+items-center
+gap-3
+">
 
 <button
-onClick={()=>setQuantity(Math.max(1,quantity-1))}
-className="w-8 h-8 rounded-full bg-white border cursor-pointer hover:bg-[#5AA52D] hover:text-white transition"
+onClick={()=>setQty(Math.max(1,qty-1))}
+className="w-8 h-8 rounded-full bg-white border"
 >
 -
 </button>
 
 <span className="font-bold">
-{quantity}
+{qty}
 </span>
 
 <button
-onClick={()=>setQuantity(quantity+1)}
-className="w-8 h-8 rounded-full bg-white border cursor-pointer hover:bg-[#5AA52D] hover:text-white transition"
+onClick={()=>setQty(qty+1)}
+className="w-8 h-8 rounded-full bg-white border"
 >
 +
 </button>
 
 </div>
+)}
 
 <a
-href={whatsappLink}
+href={whatsapp}
 target="_blank"
 rel="noreferrer"
-className="mt-4 w-full py-2.5 rounded-full bg-[#5AA52D] hover:bg-[#cb1a0d] text-white text-center text-sm font-medium cursor-pointer transition"
+className="
+mt-5
+mx-auto
+w-fit
+px-8
+bg-[#5AA52D]
+hover:bg-[#cb1a0d]
+text-white
+text-center
+py-3
+rounded-full
+font-medium
+"
 >
 Book Through WhatsApp
 </a>
 
-</div>
 
 </div>
 
+</div>
+
+
 </motion.div>
+
 </motion.div>
+
 </AnimatePresence>
 );
 }
