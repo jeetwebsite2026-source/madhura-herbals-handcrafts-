@@ -2,12 +2,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useState } from "react";
 
-import { powderContent, herbalContent } from "../data/productContent";
+
 
 export default function ProductModal({ product, onClose }) {
   const isCraft = product.category === "Craft";
-  const isPowder = product.category === "Powder";
-  const isHerbal = product.category === "Herbal";
 
   const [variant, setVariant] = useState(
     !isCraft ? product.variants[0] : null
@@ -15,20 +13,7 @@ export default function ProductModal({ product, onClose }) {
 
   const [qty, setQty] = useState(1);
 
-  /* ================= SAFE CONTENT HANDLING ================= */
-
-  const content = (() => {
-    if (isHerbal) {
-      return herbalContent?.[product.name] || product.description || "";
-    }
-
-    if (isPowder) {
-      return powderContent?.[product.name] || product.description || "";
-    }
-
-    return product.description || "";
-  })();
-
+  const content = product.content || product.description || "";
   const whatsapp = `https://wa.me/918220434055?text=${encodeURIComponent(
     `Hi Madhura,
 I am interested in ${product.name}.
@@ -114,9 +99,10 @@ Please share order details.`
               )}
 
               {/* CONTENT */}
-              <div className="mt-4 text-sm leading-relaxed whitespace-pre-line">
-                {content}
-              </div>
+<div
+  className="mt-4 text-sm leading-relaxed"
+  dangerouslySetInnerHTML={{ __html: content }}
+/>
 
               {/* QTY */}
               {!isCraft && (

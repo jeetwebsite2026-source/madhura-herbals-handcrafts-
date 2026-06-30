@@ -4,42 +4,42 @@ import { FiMail } from "react-icons/fi";
 import contactBg from "../assets/about/about-bg.png";
 
 export default function ContactSection() {
-  const contacts = [
-    {
-      icon: <FaWhatsapp />,
-      title: "WhatsApp",
-      detail: "8220434055",
-      button: "Chat Now",
-      link:
-        "https://wa.me/918220434055?text=Hi%20Madhura,%20I%20am%20interested%20in%20your%20products.",
-    },
-    {
-      icon: <FaPhoneAlt />,
-      title: "Call Us",
-      detail: "8870421846",
-      button: "Call Now",
-      link: "tel:8870421846",
-    },
-    {
-      icon: <FiMail />,
-      title: "Email",
-      detail: "llalithasubramanian1@gmail.com",
-      button: "Send Email",
-      link: "mailto:llalithasubramanian1@gmail.com",
-    },
-    {
-      icon: <FaInstagram />,
-      title: "Instagram",
-      detail: "@madhuraherbal",
-      button: "Follow Now",
-      link:
-        "https://www.instagram.com/madhuraherbal?utm_source=qr&igsh=MXFubTdpNHYya2djOA==",
-    },
-  ];
+ const contacts = [
+  {
+    icon: <FaWhatsapp />,
+    title: "WhatsApp",
+    detail: "8220434055",
+    button: "Chat Now",
+    link:
+      "https://wa.me/918220434055?text=Hi%20Madhura,%20I%20am%20interested%20in%20your%20products.",
+  },
+  {
+    icon: <FaPhoneAlt />,
+    title: "Call Us",
+    detail: "8870421846",
+    button: "Call Now",
+    link: "tel:8870421846",
+  },
+  {
+    icon: <FiMail />,
+    title: "Email",
+    detail: "madhuraherbal2026@gmail.com",
+    button: "Send Email",
+    link: "mailto:madhuraherbal2026@gmail.com",
+  },
+  {
+    icon: <FaInstagram />,
+    title: "Instagram",
+    detail: "@madhuraherbal_official",
+    button: "Follow Now",
+    link:
+      "https://www.instagram.com/madhuraherbal_official?igsh=MWdqcW40aXMwbjFodg==",
+  },
+];
 
   return (
     <section
-      className="relative py-10 md:py-16 bg-cover bg-center"
+      className="relative py-10 bg-cover bg-center"
       style={{ backgroundImage: `url(${contactBg})` }}
     >
       <div className="absolute inset-0 bg-[#f7faf5]/70" />
@@ -77,21 +77,26 @@ export default function ContactSection() {
           className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6"
         >
           {contacts.map((item, index) => (
-            <div key={item.title} className="relative">
+           <div key={item.title} className="relative h-full">
 
-              <div className="
-                bg-white/90
-                backdrop-blur-md
-                rounded-3xl
-                border border-green-100
-                shadow-sm
-                p-6
-                text-center
-                transition
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-lg
-              ">
+             <div className="
+  h-full
+  min-h-[300px]
+  bg-white/90
+  backdrop-blur-md
+  rounded-3xl
+  border border-green-100
+  shadow-sm
+  p-6
+  text-center
+  flex
+  flex-col
+  items-center
+  transition
+  duration-300
+  hover:-translate-y-2
+  hover:shadow-lg
+">
 
                 <div className="
                   mx-auto w-14 h-14
@@ -106,9 +111,17 @@ export default function ContactSection() {
                   {item.title}
                 </h2>
 
-                <p className="mt-2 text-sm text-[var(--text-light)] break-all">
-                  {item.detail}
-                </p>
+                <p className="
+  mt-2 
+  text-sm 
+  text-[var(--text-light)] 
+  break-words
+  max-w-[220px]
+  min-h-[40px]
+  flex items-center justify-center
+">
+  {item.detail}
+</p>
 
                 <a
                   href={item.link}

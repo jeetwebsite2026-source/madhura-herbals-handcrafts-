@@ -139,7 +139,7 @@ px-2
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-14 flex justify-center"
+          className="mt-14 mb-7 flex justify-center"
         >
           <div className="text-center bg-white border border-green-100 rounded-3xl px-8 py-8 shadow-md w-full max-w-xl">
 
